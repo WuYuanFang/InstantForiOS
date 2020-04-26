@@ -21,11 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow.init()
         window?.frame = UIScreen.main.bounds
         window?.makeKeyAndVisible()
-        let loginVC = DKLoginViewController()
-        let loginNav = DKNavigationViewController.init(rootViewController: loginVC)
-        window?.rootViewController = loginNav
+        window?.rootViewController = DK_WelcomeViewController()
         UINavigationBar.appearance().isTranslucent = false
-        
         return true
     }
     

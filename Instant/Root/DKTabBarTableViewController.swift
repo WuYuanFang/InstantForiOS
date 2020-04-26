@@ -14,14 +14,14 @@ class DKTabBarTableViewController: UITabBarController {
         super.viewDidLoad()
         self.delegate = self
         self.setupChildController()
-        self.tabBar.tintColor = AppThemeYellowColor
+        self.tabBar.tintColor = AppThemeColor
     }
     
     // 初始化4个Controller
     func setupChildController() {
         // 首页
         let homeVC = DKHomeViewController()
-        self.setupChildViewController(controller: homeVC, title: "首页", imageName: "icon_home_normal", selectImageName: "icon_home_click", tag: 10)
+        self.setupChildViewController(controller: homeVC, title: "时刻", imageName: "icon_home_normal", selectImageName: "icon_home_click", tag: 10)
         // 我的
         let mineVC = DKMineViewController()
         self.setupChildViewController(controller: mineVC, title: "我的", imageName: "icon_me_normal", selectImageName: "icon_me_click", tag: 13)

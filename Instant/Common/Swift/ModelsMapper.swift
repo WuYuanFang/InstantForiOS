@@ -72,15 +72,11 @@ extension HandyJSON {
                 return .failure(errMsg: "数据解析错误")
             }
             guard info.code == 0000 || info.code == 200 else{
-//                // 用户未登录（离线）
-//                if info.code == 402 {
-//                    DK_UserInfo.didChange(loginStatus: .failure)
-//                }
-                return .failure(errMsg: info.message ?? "")
+                return .failure(errMsg: info.msg ?? "")
             }
             
             let data = Self.deserialize(from: json, designatedPath: "data")
-            return .success(msg: info.message ?? "", data: data)
+            return .success(msg: info.msg ?? "", data: data)
             
         case .failure(let error):
             let msg = error.errorDescription ?? ""
@@ -103,11 +99,11 @@ extension HandyJSON {
 //                if info.code == 402 {
 //                    DK_UserInfo.didChange(loginStatus: .failure)
 //                }
-                return .failure(errMsg: info.message ?? "")
+                return .failure(errMsg: info.msg ?? "")
             }
             
             let data = [Self].deserialize(from: json, designatedPath: "data")?.compactMap({ $0 })
-            return .success(msg: info.message ?? "", data: data)
+            return .success(msg: info.msg ?? "", data: data)
             
         case .failure(let error):
             let msg = error.errorDescription ?? ""
@@ -132,10 +128,10 @@ extension HandyJSON {
             return .failure(errMsg: "数据解析错误")
         }
         guard info.code == 0000 else{
-            return .failure(errMsg: info.message ?? "")
+            return .failure(errMsg: info.msg ?? "")
         }
         let data = Self.deserialize(from: json, designatedPath: "data")
-        return .success(msg: info.message ?? "", data: data)
+        return .success(msg: info.msg ?? "", data: data)
     }
     
     /// data里面只是string
@@ -148,7 +144,7 @@ extension HandyJSON {
                 return nil
             }
             guard info.code == 0000 || info.code == 200 else{
-                MBProgressHUD.wj_showError(info.message ?? "")
+                MBProgressHUD.wj_showError(info.msg ?? "")
                 return nil
             }
             

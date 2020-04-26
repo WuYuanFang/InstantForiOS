@@ -49,6 +49,8 @@
 		AB27B288245548480096079D /* TTGTagCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB27B281245548480096079D /* TTGTagCollectionView.m */; };
 		AB27B289245548480096079D /* TTGTextTagCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB27B282245548480096079D /* TTGTextTagCollectionView.m */; };
 		AB27B28A245548480096079D /* TranslucentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB27B283245548480096079D /* TranslucentViewController.m */; };
+		AB27B28C245583FA0096079D /* DK_EditInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB27B28B245583FA0096079D /* DK_EditInfoViewController.swift */; };
+		AB27B2902455B4310096079D /* DK_WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB27B28F2455B4310096079D /* DK_WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +128,8 @@
 		AB27B282245548480096079D /* TTGTextTagCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTGTextTagCollectionView.m; sourceTree = "<group>"; };
 		AB27B283245548480096079D /* TranslucentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TranslucentViewController.m; sourceTree = "<group>"; };
 		AB27B284245548480096079D /* CattleMaster-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CattleMaster-Bridging-Header.h"; sourceTree = "<group>"; };
+		AB27B28B245583FA0096079D /* DK_EditInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DK_EditInfoViewController.swift; sourceTree = "<group>"; };
+		AB27B28F2455B4310096079D /* DK_WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DK_WelcomeViewController.swift; sourceTree = "<group>"; };
 		CB278D17EE027E5BCEA96439 /* Pods_Instant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -224,6 +228,7 @@
 				AB27B1FD245538090096079D /* AppDelegate.swift */,
 				AB27B22F245538B80096079D /* DKNavigationViewController.swift */,
 				AB27B238245539410096079D /* DKTabBarTableViewController.swift */,
+				AB27B28F2455B4310096079D /* DK_WelcomeViewController.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -253,9 +258,9 @@
 		AB27B232245538D20096079D /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				AB27B26824553A5A0096079D /* Login */,
 				AB27B234245538F50096079D /* Home */,
 				AB27B235245538F90096079D /* Mine */,
+				AB27B26824553A5A0096079D /* Login */,
 				AB27B233245538EF0096079D /* Common */,
 			);
 			path = Main;
@@ -281,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				AB27B266245539BD0096079D /* DKMineViewController.swift */,
+				AB27B28B245583FA0096079D /* DK_EditInfoViewController.swift */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -580,6 +586,7 @@
 				AB27B2602455399C0096079D /* ModelsMapper.swift in Sources */,
 				AB27B25E2455399C0096079D /* DKWXApiManager.swift in Sources */,
 				AB27B265245539B60096079D /* DKHomeViewController.swift in Sources */,
+				AB27B2902455B4310096079D /* DK_WelcomeViewController.swift in Sources */,
 				AB27B2522455399B0096079D /* DKUserInfo.swift in Sources */,
 				AB27B230245538B80096079D /* DKNavigationViewController.swift in Sources */,
 				AB27B2502455399B0096079D /* UIButtonExtension.swift in Sources */,
@@ -592,6 +599,7 @@
 				AB27B2632455399C0096079D /* AppConfig.swift in Sources */,
 				AB27B2562455399B0096079D /* UITextFieldExtension.swift in Sources */,
 				AB27B2372455392B0096079D /* DKBaseViewController.swift in Sources */,
+				AB27B28C245583FA0096079D /* DK_EditInfoViewController.swift in Sources */,
 				AB27B25D2455399C0096079D /* DKButtonExtension.swift in Sources */,
 				AB27B25B2455399C0096079D /* ResponseInfo.swift in Sources */,
 				AB27B2592455399C0096079D /* DKCacheManager.swift in Sources */,
@@ -789,7 +797,7 @@
 				);
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = Instant/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -819,7 +827,7 @@
 				);
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = Instant/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

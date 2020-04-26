@@ -12,7 +12,7 @@ class DKHomeViewController: DKBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "首页"
+        self.title = "时刻"
         // Do any additional setup after loading the view.
     }
     

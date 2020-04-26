@@ -10,7 +10,7 @@ import UIKit
 
 extension UIButton {
 
-    class func createBtn(_ title:String, _ bgColor:UIColor = AppThemeYellowColor, _ cRadius:CGFloat = 20.0) -> UIButton {
+    class func createBtn(_ title:String, _ bgColor:UIColor = AppThemeColor, _ cRadius:CGFloat = 20.0) -> UIButton {
         let btn = UIButton()
         btn.setTitleColor(.white, for: .normal)
         btn.setTitle(title, for: .normal)

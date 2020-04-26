@@ -21,12 +21,16 @@ enum ApiManager {
     case uploadImg(imgData:Data)
     // 登录
     case login(username:String?, password:String?)
+    // 获取用户详情
+    case getDetailInfo
+    // 保存用户信息
+    case saveUserInfo(id:String?, username:String?, actualName:String?, nickname:String?, gender:String?, idCard:String?, phone:String?, headPath:String?)
 }
 
 extension ApiManager : TargetType {
     
     var baseURL: URL {
-        return URL(string: "https://shengwwl.com")!
+        return URL(string: "http://127.0.0.1:8090/instant")!
     }
     
     var path: String {
@@ -34,16 +38,20 @@ extension ApiManager : TargetType {
         case .uploadImg:
             return "/Upload/uplaodImg"
         case .login:
-            return ""
+            return "/loginIn"
+        case .getDetailInfo:
+            return "/user/getDetailInfo"
+        case .saveUserInfo:
+            return "/user/updateInfo"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .login:
+        case .login, .saveUserInfo:
             return .post
         default:
-            return .post
+            return .get
         }
     }
     
@@ -54,6 +62,8 @@ extension ApiManager : TargetType {
     var task: Task {
         var param: [String: String?] = [:]
         switch self {
+        case .getDetailInfo:
+            break
         case .uploadImg(let imgData):
             let formData = MultipartFormData(provider: .data(imgData), name: "uploadImg",
                                              fileName: "dk.png", mimeType: "image/png")
@@ -61,6 +71,8 @@ extension ApiManager : TargetType {
             return .uploadMultipart(multipartData)
         case .login(username: let username, password: let password):
             param = ["username":username, "password":password]
+        case .saveUserInfo(id: let id,username: let username, actualName: let actualName, nickname: let nickname, gender: let gender, idCard: let idCard, phone: let phone, headPath: let headPath):
+            param = ["id":id, "username":username, "actualName":actualName, "nickname":nickname, "gender":gender, "idCard":idCard, "phone":phone, "headPath":headPath]
         }
         // 在此处添加公共参数
         // 将参数中value为nil的过滤掉

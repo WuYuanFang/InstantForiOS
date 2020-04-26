@@ -13,14 +13,15 @@ import HandyJSON
 enum UserInfoKeys: String {
     case token      // 用户token
     case userId     // 用户ID
-    case userType   // 用户类型：1找师傅，2师傅
-    case master_status // 师傅接单状态 0已下线 1接单中
-    case phone      // 登录手机
+    case roleType   // 用户类型：1找师傅，2师傅
+    case name      // 登录手机
 }
 
 class DKUserInfo {
     
     var animated:Bool = false
+    
+    var userInfo: UserInfoModel?
     
     var token: String? {
         return getString(for: .token)
@@ -28,14 +29,11 @@ class DKUserInfo {
     var userId: String? {
         return getString(for: .userId)
     }
-    var userType: String? {
-        return getString(for: .userType)
+    var roleType: String? {
+        return getString(for: .roleType)
     }
-    var master_status: Int {
-        return getInt(for: .master_status)
-    }
-    var phone: String? {
-        return getString(for: .phone)
+    var name: String? {
+        return getString(for: .name)
     }
     var lat: Double = 23.036296
     var lon: Double = 114.419689
@@ -59,22 +57,17 @@ extension DKUserInfo: UserDefaultsSettable {
         set(userId, forKey: .userId)
     }
     
-    func updateUserType(usertype: String) {
-        set(usertype, forKey: .userType)
+    func updateRoleType(usertype: String) {
+        set(usertype, forKey: .roleType)
     }
     
-    func updateStatus(status: Int) {
-        set(status, forKey: .master_status)
-    }
-    
-    func updatePhone(phone: String) {
-        set(phone, forKey: .phone)
+    func updateName(phone: String) {
+        set(phone, forKey: .name)
     }
     
     func removeAll() {
         removeObject(key: .token)
         removeObject(key: .userId)
-        removeObject(key: .master_status)
     }
 }
 

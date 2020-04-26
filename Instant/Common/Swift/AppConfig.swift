@@ -33,9 +33,9 @@ let TabBarHeight:CGFloat = 49
 let SaveBtnWidth:CGFloat = 280
 
 //MARK:------ 颜色 -------
-let AppThemeYellowColor = UIColor.init(red: 255/255.0, green: 122/255.0, blue: 0/255.0, alpha: 1.0)
-let AppBlueColor = UIColor.init(red: 93/255.0, green: 174/255.0, blue: 253/255.0, alpha: 1.0)
-let AppRedColor = UIColor.init(red: 252/255.0, green: 101/255.0, blue: 106/255.0, alpha: 1.0)
+let AppThemeColor = UIColor.init(red: 239/255.0, green: 72/255.0, blue: 104/255.0, alpha: 1.0) // EF4868
+let AppBlueColor = UIColor.init(red: 0/255.0, green: 173/255.0, blue: 255/255.0, alpha: 1.0) // 00ADFF
+let AppYellowColor = UIColor.init(red: 255/255.0, green: 212/255.0, blue: 121/255.0, alpha: 1.0)
 let AppGreenColor = UIColor.init(red: 37/255.0, green: 155/255.0, blue: 36/255.0, alpha: 1.0)
 let AppBGColor = UIColor.init(red: 250/255.0, green: 250/255.0, blue: 250/255.0, alpha: 1.0)//背景色
 let App333333CGolor = UIColor.init(red: 51/255.0, green: 51/255.0, blue: 51/255.0, alpha: 1.0) //#333333 深灰色

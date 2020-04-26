@@ -15,9 +15,9 @@ class DKNavigationViewController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationBar.isTranslucent = false
-        self.navigationBar.tintColor = UIColor.black
-        self.navigationBar.barTintColor = .white
-        self.navigationBar.titleTextAttributes = [.foregroundColor:UIColor.black, .font:UIFont.systemFont(ofSize: 18)]
+        self.navigationBar.tintColor = UIColor.white
+        self.navigationBar.barTintColor = AppThemeColor
+        self.navigationBar.titleTextAttributes = [.foregroundColor:UIColor.white, .font:UIFont.systemFont(ofSize: 18)]
     }
     
     // 当在首页跳转的话，需要先隐藏UITabbar

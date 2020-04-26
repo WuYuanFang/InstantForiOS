@@ -13,7 +13,7 @@ import HandyJSON
 /// 响应信息
 struct ResponseInfo: HandyJSON {
     var code: Int = 0
-    var message: String?
+    var msg: String?
 }
 
 // textfieldCell的界面的数据展示和存储的Model

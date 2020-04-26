@@ -85,7 +85,7 @@ class DKCommonTools: NSObject {
                 DispatchQueue.main.async {
                     button.isEnabled = true
                     button.setTitle("重新发送", for: .normal)
-                    button.backgroundColor = AppThemeYellowColor
+                    button.backgroundColor = AppThemeColor
                 }
                 return
             }
@@ -170,7 +170,7 @@ class DKCommonTools: NSObject {
     // tagconfig的配置初始化
     class func setupTagConfig(_ tagView: TTGTextTagCollectionView){
         let config: TTGTextTagConfig = tagView.defaultConfig
-        config.selectedBackgroundColor = AppThemeYellowColor
+        config.selectedBackgroundColor = AppThemeColor
         config.minWidth = 56
         config.selectedTextColor = .white
         config.textColor = App555555Color
@@ -182,9 +182,20 @@ class DKCommonTools: NSObject {
         config.shadowColor = .white
     }
     
+    class func getDetailInfo() {
+        ApiManagerProvider.request(.getDetailInfo) { (result) in
+            if let model = UserInfoModel.mapModel(result) {
+                DKUserInfo.shared.userInfo = model
+                DKCacheManager.shared.setObject(model, forKey: CacheType.UserInfo.rawValue)
+            }
+        }
+    }
+    
     /// 退出登录
     class func loginOut() {
 //        GPSTimerUtil.shared.cancelTimer()
+        DKCacheManager.shared.removeAllObjects()
+        DKUserInfo.shared.userInfo = nil
         NotificationCenter.default.post(name: .rootChangeNotifi, object: RootStatus.login)
     }
     
